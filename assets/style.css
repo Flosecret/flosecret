@@ -1,0 +1,74 @@
+body {
+    background-color: black;
+}
+
+p {
+    color: red;
+}
+
+.headline {
+    width: 100%;
+    height: 224px;
+    display: table;
+}
+
+#tx {
+    width: 600px;
+    text-align: center;
+}
+
+#nKr, #nK {
+    width: 100px;
+}
+
+#headertext {
+    text-align: left;
+    margin-left: 10px;
+}
+
+#logo-container {
+    width: 15%;
+}
+
+h1 a:link, a:visited {
+    color: #333333;
+    text-decoration: none;
+}
+
+#headertext,
+#logo-container {
+    display: table-cell;
+    padding-left: 20px;
+    vertical-align: middle;
+}
+
+.row-front {
+    position: relative;
+   margin-top: 10%;
+}
+
+.front-btn {
+    align-content: center;
+}
+
+.btn-primary-outline {
+    background-color: transparent;
+    border-color: white;
+    color: white;
+}
+
+.input-form {
+    background-color: transparent;
+    border-color: white;
+    color: white;
+}
+
+.log-message {
+    width: 500px;
+}
+
+.log {
+    position: relative;
+    background-color: black;
+    top: -250px;
+}

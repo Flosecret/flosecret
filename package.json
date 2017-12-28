@@ -1,0 +1,41 @@
+{
+  "name": "flosecret",
+  "version": "1.0.0",
+  "description": "",
+  "main": "serve.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "browserify": "node_modules/.bin/browserify src/index.js -o public/floSecret.js",
+    "start": "node_modules/foreman/nf.js start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Flosecret/flosecret.git"
+  },
+  "author": "Davi Ortega",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Flosecret/flosecret/issues"
+  },
+  "homepage": "https://github.com/Flosecret/flosecret#readme",
+  "dependencies": {
+    "blob-stream": "^0.1.3",
+    "body-parser": "^1.18.2",
+    "bootstrap": "^4.0.0-alpha.6",
+    "browserify": "^14.5.0",
+    "crypto-js": "^3.1.9-1",
+    "express": "^4.16.2",
+    "file-saver": "^1.3.3",
+    "foreman": "^2.0.0",
+    "jsdom": "^11.5.1",
+    "node-localstorage": "^1.3.0",
+    "pdfkit": "^0.8.3",
+    "pug": "^2.0.0-rc.4",
+    "qr-image": "^3.2.0",
+    "secrets.js-grempe": "^1.1.0",
+    "webpack": "^3.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.3"
+  }
+}

@@ -1,0 +1,40 @@
+div(class="row justify-content-md-center" style="position: relative;")
+    input#nKr(
+        class="input-form text-center"
+        placeholder='# of required keys'
+        name="numberOfKeysRequired"
+        style="margin: 10px"
+        value=ns
+    )
+    input#tx(
+        class="input-form text-center" 
+        placeholder='hash of the transaction' 
+        name="numberOfKeys"
+        style="margin: 10px"
+        value=tx
+    )
+    button(
+        class="btn btn-primary-outline front-btn"
+        aria-disabled="true"
+        style="margin: 10px"
+        onClick="getTxInfo()"
+    ) Find secret
+div(class="row justify-content-md-center" style="position: relative; top:10px;")
+    p#secret #{secret}
+- for (var x = 0; x < ns; x++)
+    div(class="row justify-content-md-center" style="position: relative; top:10px;")
+        input(
+            id='share' + x
+            class="input-form text-center input-share" 
+            placeholder='share ' + x 
+            name="share" + x
+            style="margin: 10px"
+        )
+- if(ns)
+    div(class="row justify-content-md-center" style="position: relative; top:10px;")
+        button(
+            class="btn btn-primary-outline front-btn"
+            aria-disabled="true"
+            style="margin: 10px"
+            onClick="decrypt()"
+        ) Decrypt

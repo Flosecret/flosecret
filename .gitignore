@@ -1,0 +1,5 @@
+node_modules
+scratch
+public
+.env
+.DS_Store

@@ -1,0 +1,24 @@
+div(class="row justify-content-md-center" style="position: relative; top:50px;")
+    input#nK(
+        class="input-form text-center" 
+        placeholder='Number of keys' 
+        style="width: 200px;"
+        name="numberOfKeys"
+        value = 10
+    )
+    div(class="col-5 col-md-2")
+    input#nKr(
+        class="input-form text-center"
+        placeholder='Number of required keys'
+        style="width: 200px;"
+        name="numberOfKeysRequired"
+        value = 5
+    )
+div(class="row justify-content-md-center" style="position: relative; top:100px;")
+    textarea#msg(class="input-form" name="" cols="100" rows="10")
+div(class="row justify-content-md-center" style="position: relative; top:150px;")
+    button(
+        class="btn btn-primary-outline front-btn"
+        aria-disabled="true"
+        onClick="postSecret()"
+    ) Generate keys, encrypt and post
