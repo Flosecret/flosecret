@@ -4,6 +4,12 @@ html(lang='en')
         title FloSecret
         link(href='node_modules/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
         link(href='assets/style.css', rel="stylesheet", type='text/css')
+        script(async src="https://www.googletagmanager.com/gtag/js?id=UA-111726152-1")
+        script.
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-111726152-1');
     body
         include header.pug
         include frontPage.pug
