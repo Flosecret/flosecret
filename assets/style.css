@@ -83,6 +83,7 @@ h1 a:link, a:visited {
 }
 
 #secret {
+    color: red;
     width: 500px;
     word-break: break-word;
     text-align: center;
