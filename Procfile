@@ -1,1 +1,1 @@
-web: npm run browserify; npm start
+web: npm run browserify; node server.js
