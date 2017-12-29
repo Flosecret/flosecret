@@ -2,6 +2,14 @@ body {
     background-color: black;
 }
 
+h1, h2, h3 {
+    color: grey
+}
+
+a {
+    color: grey
+}
+
 p {
     color: red;
 }
@@ -9,6 +17,7 @@ p {
 .headline {
     width: 100%;
     height: 224px;
+    color: grey;
     display: table;
 }
 
@@ -31,7 +40,7 @@ p {
 }
 
 h1 a:link, a:visited {
-    color: #333333;
+    color: grey;
     text-decoration: none;
 }
 
