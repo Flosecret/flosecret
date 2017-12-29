@@ -125,14 +125,14 @@ module.exports = (shares, tx, nRequired, filename = false) => {
                     .moveDown()
     
                 doc.fontSize(7)
-                    .text(`http://sharedsecrets.net/get?tx=${tx}&ns=${nrequired}`, {
+                    .text(`http://sharedsecrets.net/get?tx=${tx}&ns=${nRequired}`, {
                         align: 'center',
                         width: mainTextWidht
                     })
                     
     
                 doc.save()
-                const getQR = qr.svgObject(`http://sharedsecret.net/get?tx=${tx}&ns=${nrequired}`)
+                const getQR = qr.svgObject(`http://sharedsecret.net/get?tx=${tx}&ns=${nRequired}`)
                 doc.translate(195, 605).scale(1.5)
                     .path(getQR.path)
                     .fill('black', 'even-odd')
