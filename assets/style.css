@@ -44,7 +44,6 @@ h1 a:link, a:visited {
 
 .row-front {
     position: relative;
-   margin-top: 10%;
 }
 
 .front-btn {
@@ -67,8 +66,14 @@ h1 a:link, a:visited {
     width: 500px;
 }
 
-.log {
+#log {
     position: relative;
     background-color: black;
     top: -250px;
+}
+
+#secret {
+    width: 500px;
+    word-break: break-word;
+    text-align: center;
 }
