@@ -86,7 +86,7 @@ module.exports = (shares, tx, nRequired, filename = false) => {
     
                 doc.fontSize(12)
                     .moveDown()
-                    .text(`The key to decrypt this secret has been split in ${shares.length} shares like this one. By design, the secret can be decrypted with any ${nRequired} shares like this one.`, {
+                    .text(`The key to decrypt this secret has been split in ${shares.length} shares like this one. By design, the secret can be decrypted with any ${nRequired} of these shares.`, {
                         align: 'justify',
                         width: mainTextWidht
                     })
@@ -125,7 +125,7 @@ module.exports = (shares, tx, nRequired, filename = false) => {
                     .moveDown()
     
                 doc.fontSize(7)
-                    .text(`http://sharedsecrets.net/get?tx=${tx}&ns=${nRequired}`, {
+                    .text(`http://sharedsecret.net/get?tx=${tx}&ns=${nRequired}`, {
                         align: 'center',
                         width: mainTextWidht
                     })
