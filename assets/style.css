@@ -1,5 +1,6 @@
 body {
     background-color: black;
+    padding: 40px;
 }
 
 h1, h2, h3 {
@@ -11,7 +12,7 @@ a {
 }
 
 p {
-    color: red;
+    color: hsla(128, 100%, 42%, 1);
 }
 
 .headline {
@@ -82,6 +83,7 @@ h1 a:link, a:visited {
 }
 
 #secret {
+    color: red;
     width: 500px;
     word-break: break-word;
     text-align: center;

@@ -7,13 +7,13 @@ div(class="row row-front justify-content-md-center")
 h2 What is this?
 p This app let you save encrypted secret in the FLO blockchain and produces a number of keys that must be combined to be able to decrypt the secret.
 h2 This is a zero knowledge application. 
-p The creation of the master key and shared keys and the encryption of the secret with the main key happens in your browser. SharedSecrets then send the encrypted information to be posted in the FLO blockchain. This is the only information sent to our servers. The server reply with the hash of the transaction and ask your browser to produce the pdf containing information about the shares.
+p The creation of the master key and shared keys and the encryption of the secret with the main key happens in your browser. SharedSecret then sends the encrypted information to be posted in the FLO blockchain. This is the only information sent to our servers. The server reply with the hash of the transaction and ask your browser to produce the pdf containing information about the shares.
 h2 How to record an encrypted information?
 p Currently, we are only supporting messages typed or copied to a text area. Click in POST, select the number of total shares and the number of required shares, type or paste the information and click GO.
 h2 How to decrypt a secret?
 p Click in GET, type the number of minimum required shares and the hash of the transaction and press Find secret. Then insert the hash of each share and click decrypt. If everything is ok, you should be able to see the decrypted information.
 h2 What algorithms are used?
-p SharedSecret asks your browser to generate a random 4096-bit key using secrets.js-grempe module and encrypt the message using aes-256 from the node crypto package.
+p SharedSecret asks your browser to generate a random 4096-bit key using secrets.js-grempe module (an implementation of Shamir's threshold secret sharing scheme) and encrypt the message using aes-256 from the node crypto package.
 h2 How can I help?
 p Pull request changes from the git repository #[a(href='https://github.com/Flosecret/flosecret') https://github.com/Flosecret/flosecret]
 p Donate FLO to: FDN6xPX3RgvWCjtXpBLQLsEgTiCkQduENR
