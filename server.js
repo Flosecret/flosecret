@@ -40,12 +40,18 @@ app.get('/get', (request, respond) => {
         const url = `https://florincoin.info/api/getrawtransaction?txid=${tx}&decrypt=1`
         reqt({url, encoding: null}, (err, response, body) => {
             const txInfo = JSON.parse(body.toString())
-            const secret = txInfo['tx-comment'].split(':')[1]
-            respond.render('getInfo', {
-                tx,
-                secret,
-                ns: numShares
-            })
+            let rawSecret = txInfo['tx-comment'] || txInfo['floData']
+            if (rawSecret) {
+                const secret = rawSecret.split(':')[1]
+                respond.render('getInfo', {
+                    tx,
+                    secret,
+                    ns: numShares
+                })
+            }
+            else {
+                console.log(JSON.stringify(rawSecret, null, ' '))
+            }
         })
     }
     else {
