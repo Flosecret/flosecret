@@ -79,7 +79,9 @@ window.postSecret = () => {
                 tx += data.toString()
             })
             res.on('error', (err) => {
+                console.log('Ooops')
                 console.log(err)
+                message.innerHTML = 'Something went wrong'
             })
             res.on('end', () => {
                 message.innerHTML = 'Everything worked out, your secret is already in the FLO blockchain. Now you just have to wait a bit while your browser splits the secret and generates the pdf files with information about each share. Please allow download of multiple files when asked.'
