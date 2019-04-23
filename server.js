@@ -6,12 +6,33 @@ const bodyParser = require('body-parser')
 
 const HDMW = require('oip-hdmw')
 const Wallet = HDMW.Wallet
-const defaultValue = 0.001
+const defaultValue = 0.01
 const mnemonics = process.env.FLOWALLET_MNEMONICS
-const wallet = new Wallet(mnemonics)
+const wallet = new Wallet(mnemonics, {discover: true, supported_coins: ['flo']})
+const coin = wallet.getCoin('flo')
 
-const makePdf = require('./src/makePdf')
-const pdfFolder = path.resolve(__dirname, 'scratch')
+coin.discoverAccounts().then((accounts) => {
+    //console.log(accounts)
+    const address = coin.getMainAddress().getPublicAddress()
+
+    console.log(`FLO address is: ${address}`)
+    const to = {}
+    to[address] = defaultValue
+
+    return coin.getAccount().sendPayment({
+        from: address,
+        to,
+        floData: 'SharedSecret is about to do something... or not',
+        coin: 'flo'
+    })
+}).then((txid) => {
+    console.log('it worked')
+}).catch((err) => {
+    console.log('Something is not right')
+    console.log(err)
+})
+
+ 
 
 const app = express()
 app.use(bodyParser.json())
@@ -29,7 +50,7 @@ app.get('/', (request, respond) => {
 })
 
 app.get('/get', (request, respond) => {
-    const tx = request.param('tx')
+    let tx = request.param('tx')
     const numShares = parseInt(request.param('ns'))
     if (tx) {
         tx = tx.replace(/\s/g,'')
@@ -60,11 +81,12 @@ app.get('/post', (request, respond) => {
 })
 
 app.get('/process', (request, respond, next) => {
-    console.log('Got the request ro place info to the FLO blockchain')
+    console.log('Got the request to place info to the FLO blockchain')
     const decoded = decodeURIComponent(request.param('msg'))
     console.log(`Raw secret received is ${decoded}`)
     const msg = `SharedSecret1.0v-beta:${decoded}`
     const address = wallet.getCoin('flo').getMainAddress().getPublicAddress()
+
     console.log(`FLO address is: ${address}`)
     const to = {}
     to[address] = defaultValue
