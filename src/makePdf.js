@@ -60,7 +60,7 @@ module.exports = (shares, tx, nRequired, filename = false) => {
     
                 doc.fontSize(12)
                     .moveDown(2)
-                    .text('A secret has been encrypted and posted on the blockchain of the FLO cryptocurrency in the the following transaction:', {
+                    .text('Your secret has been encrypted and immutable saved to the FLO Blockchain. You can view transaction here:', {
                         align: 'justify',
                         width: mainTextWidht
                     })
@@ -86,12 +86,12 @@ module.exports = (shares, tx, nRequired, filename = false) => {
     
                 doc.fontSize(12)
                     .moveDown()
-                    .text(`The key to decrypt this secret has been split in ${shares.length} shares like this one. By design, the secret can be decrypted with any ${nRequired} of these shares.`, {
+                    .text(`The key to decrypt your Secret has been split in ${shares.length} keyshares like this one. By design, the Secret can be decrypted by using the code ("hash") in any ${nRequired} of these keyshares.`, {
                         align: 'justify',
                         width: mainTextWidht
                     })
                     .moveDown()
-                    .text(`Bellow is the part of the key that belongs to this share`, {
+                    .text(`Below is the code (part of the hash) that belongs to this keyshare`, {
                         align: 'justify',
                         width: mainTextWidht
                     })
@@ -113,12 +113,12 @@ module.exports = (shares, tx, nRequired, filename = false) => {
                 
                 doc.fontSize(12)
                     .moveDown(2)
-                    .text('Theoretically, the combination of these shares that yields to the recover of the master key to decode the secret can be executed without SharedSecrets.', {
+                    .text('Theoretically, combining the keyshares to decode the secret can be executed without Shared Secret.', {
                         align: 'justify',
                         width: mainTextWidht
                     })
                     .moveDown()
-                    .text('However, we offer a client-side script that reads the QR-codes of each share and decode the message for the user in possession of the minimum number of shares to recover the decryption key.', {
+                    .text('A client-side script is available to read the keyshare QR-codes and decode the Secret.', {
                         align: 'justify',
                         width: mainTextWidht
                     })
