@@ -55,7 +55,7 @@ window.postSecret = () => {
     element.id = 'log'
     const message = document.createElement('p')
     message.classList.add('log-message')
-    message.innerHTML = 'Please wait while your browser encrypt the information and send the secret to the FLO Blockchain.'
+    message.innerHTML = 'Please wait while your browser encrypts the information and sends the secret to the FLO Blockchain.'
     element.appendChild(message)
     document.body.appendChild(element)
     const numberOfKeys = parseInt(document.getElementById('nK').value)
@@ -84,17 +84,17 @@ window.postSecret = () => {
                 message.innerHTML = 'Something went wrong'
             })
             res.on('end', () => {
-                message.innerHTML = 'Everything worked out, your secret is already in the FLO blockchain. Now you just have to wait a bit while your browser splits the secret and generates the pdf files with information about each share. Please allow download of multiple files when asked.'
+                message.innerHTML = 'Congratulations! Your Secret is now saved to the FLO Blockchain. Now you just have to wait a bit while your browser splits the secret into sharekeys and generates multiple pdf files with information for each keyshare. Please allow multiple pdf files to download when prompted.'
 
                 makePdf(shares, tx, numberOfKeysRequired).then(() => {
-                    message.innerHTML = 'Shares generated successfull. We are all set for now. Check your the info in the pdfs for instructions on how to recover the secret.'
+                    message.innerHTML = 'Keyshares generated successfully. Check the information in the pdfs for instructions on how to recover your Secret.'
                 })
             })
         })
         req.end()
     }
     else {
-        message.innerHTML = 'ERROR: Something went wrong. Here is what are the requirements: 1) The number of total shares and required shares must be numbers (integers), 2) the number of total shares must be equal or larger than the number of required (obviously).'
+        message.innerHTML = 'ERROR: Something went wrong. One of these requirements were not met: 1) The number of total keyshares and required keyshares must be numbers (integers), 2) the total number of keyshares must be equal to or greater than the number of required keyshares.'
         const moveOnButton = document.createElement('button')
         moveOnButton.classList.add('btn', 'btn-primary-outline', 'front-btn')
         moveOnButton.addEventListener('click', () => {
