@@ -33,15 +33,15 @@ and you should be good to go!
 
 ### This is a zero-knowledge application.
 
-This is a zero-knowledge application. The encryption of the Secret, and the creation of the master key and keyshares, happens in the app. The app then writes the encrypted Secret to the FLO Blockchain and generates pdfs with the FLO Blockchain transaction ID and individual keyshare codes.
+This is a zero-knowledge application. The encryption of the Secret and the creation and keyshares (and masterkey), happens in the app. The app then writes the encrypted Secret to the FLO Blockchain and generates pdfs with the FLO Blockchain transaction ID and individual keyshare codes.
 
 ### How do I encrypt a Secret?
 
-Currently, the Secret must be typed into a text box that is limited to 1040 bytes. To start, click the “POST” button and select the number of keyshares to be generated and the number of keyshares required to decrypt the Secret. Next, enter the Secret you want to decrypt in the text box, and click “GO” button. The Secret will then be stored to the FLO Blockchain, and a pdf for each keyshare will be generated with a unique keyshare code and the FLO Blockchain transaction ID.
+Currently, the Secret must be typed into a 1040 bytes text box. To start, click the “POST” button and select the number of keyshares to be generated and the number of keyshares required to decrypt the Secret. Next, enter the Secret you want to decrypt in the text box, and click “GO” button. The Secret will then be stored to the FLO Blockchain, and a pdf with the FLO Blockchain transaction ID and a unique keyshare code (hash) will be generated for each keyshare.
 
 ### How do I decrypt a Secret?
 
-Click the “GET” box, enter required number of keyshares and FLO Blockchain transaction ID, and click “FIND SECRET.” Insert each unique keyshare code (found in the pdfs that were generated when the Secret was encrypted) and click “Decrypt.” If all of the information is entered correctly, the Secret will be displayed.
+Click the “GET” box, enter required number of keyshares and FLO Blockchain transaction ID, and click “FIND SECRET.” Insert each unique keyshare code (the hash found in the pdfs that were generated when the Secret was encrypted) and click “Decrypt.” If all of the information is entered correctly, the Secret will be displayed.
 
 ### What algorithms are used?
 
