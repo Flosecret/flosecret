@@ -4,14 +4,14 @@ div(class="row row-front justify-content-md-center")
     div(class="col-5 col-md-2")
     div(class="col-5 col-md-2")
         a(class="btn btn-primary-outline front-btn btn-block" href="/get" role='button', aria-disabled="true") GET
-h2 What is this?
-p This app let you save encrypted secret in the FLO blockchain and produces a number of keys that must be combined to be able to decrypt the secret.
-h2 This is a zero knowledge application. 
-p The creation of the master key and shared keys and the encryption of the secret with the main key happens in your browser. SharedSecret then sends the encrypted information to be posted in the FLO blockchain. This is the only information sent to our servers. The server reply with the hash of the transaction and ask your browser to produce the pdf containing information about the shares.
-h2 How to record an encrypted information?
-p Currently, we are only supporting messages typed or copied to a text area. Click in POST, select the number of total shares and the number of required shares, type or paste the information and click GO.
-h2 How to decrypt a secret?
-p Click in GET, type the number of minimum required shares and the hash of the transaction and press Find secret. Then insert the hash of each share and click decrypt. If everything is ok, you should be able to see the decrypted information.
+h2 What is Shared Secret?
+p Shared Secret is an app that allows you to encrypt, store, and decrypt a secret using Shamir's Secret Sharing algorithm and the FLO Blockchain. The Secret is encrypted by splitting it into a set number of keyshares that can distributed to a group of keyshare holders. The keyshare holders can then recombine a specified number of the key shares to decrypt the Secret.
+h2 This is a zero-knowledge application. 
+p The encryption of the Secret, and the creation of the master key and individual keyshares, happens in the app. The app then writes the encrypted Secret to the FLO Blockchain and generates pdfs with the FLO Blockchain transaction ID and individual keyshares.
+h2 How do I encrypt the Secret?
+p Currently, the Secret must be typed into a text box that is limited to 1040 bytes. To start, click the “POST” button above and select the number of keyshares to be generated and the number of keyshares required to decrypt the Secret. Enter the Secret you want to encrypt in the text box, then click “GO” button. The encrypted Secret will then be stored to the FLO Blockchain, and a pdf for each keyshare will be generated with the transaction ID.
+h2 How do I decrypt the Secret?
+p Click the “GET” box, then enter required number of keyshares and FLO Blockchain transaction ID, and click “FIND SECRET.” Insert each keyshare code(found in the pdfs that were generated when the Secret was encrypted) and click “Decrypt.” If the information is entered correctly, the Secret will be displayed.
 h2 What algorithms are used?
 p SharedSecret asks your browser to generate a random 4096-bit key using secrets.js-grempe module (an implementation of Shamir's threshold secret sharing scheme) and encrypt the message using aes-256 from the node crypto package.
 h2 How can I help?
