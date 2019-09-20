@@ -60,7 +60,7 @@ module.exports = (shares, tx, nRequired, filename = false) => {
     
                 doc.fontSize(12)
                     .moveDown(2)
-                    .text('Your secret has been encrypted and immutable saved to the FLO Blockchain. You can view transaction here:', {
+                    .text('Your Secret has been encrypted and immutably saved to the FLO Blockchain. You can view the transaction here:', {
                         align: 'justify',
                         width: mainTextWidht
                     })
@@ -86,12 +86,12 @@ module.exports = (shares, tx, nRequired, filename = false) => {
     
                 doc.fontSize(12)
                     .moveDown()
-                    .text(`The key to decrypt your Secret has been split in ${shares.length} keyshares like this one. By design, the Secret can be decrypted by using the code ("hash") in any ${nRequired} of these keyshares.`, {
+                    .text(`The key to decrypt your Secret has been split in ${shares.length} keyshares like this one. By design, the Secret can be decrypted by using the unique code (hash) in any ${nRequired} of these keyshares.`, {
                         align: 'justify',
                         width: mainTextWidht
                     })
                     .moveDown()
-                    .text(`Below is the code (part of the hash) that belongs to this keyshare`, {
+                    .text(`Below is the hash that belongs to this keyshare`, {
                         align: 'justify',
                         width: mainTextWidht
                     })
@@ -113,7 +113,7 @@ module.exports = (shares, tx, nRequired, filename = false) => {
                 
                 doc.fontSize(12)
                     .moveDown(2)
-                    .text('Theoretically, combining the keyshares to decode the secret can be executed without Shared Secret.', {
+                    .text('Theoretically, combining the keyshare hashes to decode the secret can be executed without Shared Secret.', {
                         align: 'justify',
                         width: mainTextWidht
                     })
