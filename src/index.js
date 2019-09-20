@@ -55,7 +55,7 @@ window.postSecret = () => {
     element.id = 'log'
     const message = document.createElement('p')
     message.classList.add('log-message')
-    message.innerHTML = 'Please wait while your browser encrypts the information and sends the secret to the FLO Blockchain.'
+    message.innerHTML = 'Please wait while your browser encrypts the information and sends your Secret to the FLO Blockchain.'
     element.appendChild(message)
     document.body.appendChild(element)
     const numberOfKeys = parseInt(document.getElementById('nK').value)
@@ -84,10 +84,10 @@ window.postSecret = () => {
                 message.innerHTML = 'Something went wrong'
             })
             res.on('end', () => {
-                message.innerHTML = 'Congratulations! Your Secret is now saved to the FLO Blockchain. Now you just have to wait a bit while your browser splits the secret into sharekeys and generates multiple pdf files with information for each keyshare. Please allow multiple pdf files to download when prompted.'
+                message.innerHTML = 'Congratulations! Your Secret is now saved to the FLO Blockchain. Now you just have to wait a bit while your browser splits the secret into sharekeys and generates multiple pdf files with code (hash) for each keyshare. Please allow multiple pdf files to download when prompted.'
 
                 makePdf(shares, tx, numberOfKeysRequired).then(() => {
-                    message.innerHTML = 'Keyshares generated successfully. Check the information in the pdfs for instructions on how to recover your Secret.'
+                    message.innerHTML = 'The keyshares were generated successfully! Review the pdfs for instructions on how to recover your Secret.'
                 })
             })
         })
